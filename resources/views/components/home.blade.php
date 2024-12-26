@@ -6,6 +6,7 @@
     <title>Tienda de estampillas</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" href="{{ asset('images/logo.png') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
 <body class="bg-gray-100">
 
@@ -13,7 +14,7 @@
         <section class="md:flex items-center py-4 lg:px-10 px-4 border-b border-gray-300">
             <!-- Logo de la tienda -->
             <a href="/" class="max-sm:w-full shrink-0">
-            <img src="{{ asset('images/logo.png') }}" alt="Logo de la tienda" class="w-10 h-10 mr-2">
+                <img src="{{ asset('images/logo.png') }}" alt="Logo de la tienda" class="w-10 h-10 mr-2">
             </a>
 
             <div class="flex-grow mx-4 relative">
