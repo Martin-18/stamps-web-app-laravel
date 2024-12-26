@@ -7,7 +7,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" href="{{ asset('images/logo.png') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    </head>
+
+</head>
 <body class="bg-gray-100">
 
     <header class="shadow-md font-semibold tracking-wide bg-[#fdfaf2] text-gray-700 relative z-50">
@@ -26,16 +27,30 @@
                 </button>
             </div>
             
-            <div class="flex items-center space-x-6">
-                <!-- Icono de Carrito -->
-                <a href="/login" class="text-gray-600 hover:text-gray-800 transition">
-                    <i class="fa-solid fa-right-to-bracket"></i>
-                </a>
+            @if (Route::has('login'))
+                <nav class="flex items-center space-x-6">
+                    @auth
+                        <a
+                            href="{{ url('/home') }}"
+                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                        >
+                        Dashboard
+                    </a>
+                    @else
 
-                <a href="/register" class="text-gray-600 hover:text-gray-800 transition">
-                    <i class="fa-solid fa-user-plus"></i>
-                </a>
-            </div>
+                        <a href="{{ route('login') }}" class="text-gray-600 hover:text-gray-800 transition">
+                            <i class="fa-solid fa-right-to-bracket"></i>
+                        </a>
+
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="text-gray-600 hover:text-gray-800 transition">
+                                <i class="fa-solid fa-user-plus"></i>
+                            </a>
+                        @endif
+                    @endauth
+                </nav>
+            @endif
+
         </section>
 
         <nav class="lg:flex items-center justify-center py-2 bg-[#3A4750] text-white hidden">
