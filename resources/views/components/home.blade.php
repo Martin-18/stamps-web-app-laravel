@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda de estampillas</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+    <link rel="icon" href="{{ asset('images/logo.png') }}">
+    </head>
 <body class="bg-gray-100">
 
     <header class="shadow-md font-semibold tracking-wide bg-[#fdfaf2] text-gray-700 relative z-50">
         <section class="md:flex items-center py-4 lg:px-10 px-4 border-b border-gray-300">
             <!-- Logo de la tienda -->
             <a href="/" class="max-sm:w-full shrink-0">
-                <img src="https://readymadeui.com/readymadeui.svg" alt="logo" class="w-40" />
+            <img src="{{ asset('images/logo.png') }}" alt="Logo de la tienda" class="w-10 h-10 mr-2">
             </a>
-            
+
             <div class="flex-grow mx-4 relative">
                 <input type="text" placeholder="Buscar estampillas..." 
                     class="w-full bg-gray-100 focus:bg-white px-4 py-2 rounded-full shadow-inner outline-none text-sm placeholder-gray-500 transition-all" />
