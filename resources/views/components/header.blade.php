@@ -2,7 +2,7 @@
     <section class="md:flex items-center py-4 lg:px-10 px-4 border-b border-gray-300 justify-between">
         <!-- Logo de la tienda -->
         <a href="/" class="max-sm:w-full shrink-0">
-            <img src="{{ asset('images/logo.png') }}" alt="Logo de la tienda" class="w-10 h-10 mr-2">
+            <img src="{{ asset('images/logo.png') }}" alt="Logo de la tienda" class="w-[75px] h-[65px] mr-2">
         </a>
 
         <!-- Contenedor para el botón de hamburguesa en dispositivos móviles -->
