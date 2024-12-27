@@ -4,7 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\View\Components\Home;
 use App\View\Components\StampsList;
-use App\Http\Controllers\Detail;
+use App\Http\Controllers\DetailController;
 use App\Http\Controllers\HomeController;
 
 
@@ -15,7 +15,7 @@ Route::get('/', function () {
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::get('/detail/{id}', [Detail::class, 'show'])->name('detail');
+Route::get('/detail/{id}', [DetailController::class, 'show'])->name('detail');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
