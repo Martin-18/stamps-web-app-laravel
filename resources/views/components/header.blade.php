@@ -1,7 +1,7 @@
 <header class="shadow-md font-semibold tracking-wide bg-gray-100 text-gray-700 relative z-50 sticky top-0">
     <section class="md:flex items-center py-4 lg:px-10 px-4 border-b border-gray-300 justify-between">
         <!-- Logo de la tienda -->
-        <a href="/" class="max-sm:w-full shrink-0">
+        <a href="{{ route('home') }}" class="max-sm:w-full shrink-0">
             <img src="{{ asset('images/logo.png') }}" alt="Logo de la tienda" class="w-[75px] h-[65px] mr-2">
         </a>
 
@@ -53,10 +53,10 @@
 
     <!-- Menú de navegación (oculto en dispositivos móviles) -->
     <nav class="lg:flex items-center justify-center py-2 bg-[#3A4750] text-white hidden md:flex" id="navbar">
-        <a href="/" class="px-4 py-2 hover:text-[#D4A373] transition">Inicio</a>
-        <a href="/news-stamps" class="px-4 py-2 hover:text-[#D4A373] transition">Nuevas</a>
-        <a href="/offers" class="px-4 py-2 hover:text-[#D4A373] transition">Ofertas</a> 
-        <a href="/contact" class="px-4 py-2 hover:text-[#D4A373] transition">Contacto</a>
+        <a href="{{ route('home') }}" class="px-4 py-2 hover:text-[#D4A373] transition">Inicio</a>
+        <a href="{{ route('news') }}" class="px-4 py-2 hover:text-[#D4A373] transition">Nuevas</a>
+        <a href="{{ route('offers') }}" class="px-4 py-2 hover:text-[#D4A373] transition">Ofertas</a> 
+        <a href="{{ route('contact') }}" class="px-4 py-2 hover:text-[#D4A373] transition">Contacto</a>
     </nav>
 
     <!-- Menú de navegación para móviles (oculto por defecto) -->

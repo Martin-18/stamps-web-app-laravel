@@ -11,7 +11,7 @@
 
   <x-header></x-header>
 
-  <div class="font-sans tracking-wide my-20">
+  <div class="font-sans tracking-wide my-[96px]">
     <div class="p-4 lg:max-w-7xl max-w-xl mx-auto">
         <div class="grid items-start grid-cols-1 lg:grid-cols-5 gap-12">
             <div class="min-h-[500px] lg:col-span-3 bg-[#3A4750]-to-tr from-[#F8C794] via-[#FFE0B5] to-[#FFF2D7] rounded-lg w-full lg:sticky top-0 text-center p-6">
