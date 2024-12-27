@@ -101,12 +101,11 @@
 </header>
 
 <script>
-    // JavaScript para alternar el menú de navegación en móviles
     const hamburgerButton = document.getElementById('hamburger-button');
     const mobileNavbar = document.getElementById('mobile-navbar');
     const navbar = document.getElementById('navbar');
 
     hamburgerButton.addEventListener('click', () => {
-        mobileNavbar.classList.toggle('hidden'); // Muestra u oculta el menú móvil
+        mobileNavbar.classList.toggle('hidden'); 
     });
 </script>
