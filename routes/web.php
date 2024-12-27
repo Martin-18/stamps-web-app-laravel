@@ -3,9 +3,15 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\View\Components\Home;
+use App\View\Components\StampsList;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/stamps', function () {
+    $stampsListComponent = new StampsList();
+    return $stampsListComponent->render();
 });
 
 Route::get('/home', function () {
