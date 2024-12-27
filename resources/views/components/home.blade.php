@@ -13,9 +13,9 @@
 
     <x-header></x-header>
 
-    <div class="font-sans p-6 mx-auto xl:max-w-7xl lg:max-w-5xl md:max-w-3xl max-w-md">
+    <div class="font-sans p-6 mx-auto xl:max-w-[1600px] lg:max-w-[1200px] md:max-w-[1000px] sm:max-w-[800px] max-w-full">
         <h2 class="text-4xl font-extrabold text-gray-800 text-center mb-12">Estampillas/Sellos</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             <x-stamps-list></x-stamps-list>
         </div>
     </div>
