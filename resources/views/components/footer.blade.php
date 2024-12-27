@@ -1,4 +1,4 @@
-<footer class="bg-[#3A4750] text-gray-300 py-6 px-16 tracking-wide fixed bottom-0 w-full">
+<footer class="bg-[#3A4750] text-gray-300 py-6 px-16 tracking-wide fixed sticky bottom-0 w-full">
     <div class="flex justify-between items-center max-lg:flex-col text-center flex-wrap gap-4">
     <p class="text-[15px] leading-loose">© Todos los derechos reservados 2024</p>
 
