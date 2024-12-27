@@ -8,7 +8,7 @@
             <h4 class="text-2xl text-[#3D5300] font-bold mt-2">{{ $stamp->price }}</h4>
         </div>
         <a href="{{ route('detail', ['id' => $stamp->id]) }}">
-            <button type="button" class="bg-[#3A4750] text-white font-semibold text-sm px-4 py-3 w-full hover:bg-[#8B1E3F] transition-colors duration-200">
+            <button type="button" class="bg-[#3A4750] text-white font-semibold text-sm px-4 py-3 w-full hover:bg-[#D4A373] transition-colors duration-200">
                 Ver detalles
             </button>
         </a>

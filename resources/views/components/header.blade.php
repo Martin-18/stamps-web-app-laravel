@@ -54,9 +54,6 @@
     <!-- Menú de navegación (oculto en dispositivos móviles) -->
     <nav class="lg:flex items-center justify-center py-2 bg-[#3A4750] text-white hidden md:flex" id="navbar">
         <a href="{{ route('home') }}" class="px-4 py-2 hover:text-[#D4A373] transition">Inicio</a>
-        <a href="{{ route('news') }}" class="px-4 py-2 hover:text-[#D4A373] transition">Nuevas</a>
-        <a href="{{ route('offers') }}" class="px-4 py-2 hover:text-[#D4A373] transition">Ofertas</a> 
-        <a href="{{ route('contact') }}" class="px-4 py-2 hover:text-[#D4A373] transition">Contacto</a>
     </nav>
 
     <!-- Menú de navegación para móviles (oculto por defecto) -->
