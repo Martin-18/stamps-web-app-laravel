@@ -25,7 +25,7 @@
                 <h2 class="text-2xl font-bold text-gray-800">{{ $stamp->name }}</h2>
 
                 <div class="flex items-center gap-4 mt-4">
-                    <p class="text-gray-800 text-xl font-semibold">{{ $stamp->price }}</p>
+                    <p class="text-gray-800 text-xl font-semibold">${{ $stamp->price }}</p>
                 </div>
 
                 <p class="mt-2 text-sm text-red-600 font-medium">¡Solo quedan 5 unidades en stock!</p>
