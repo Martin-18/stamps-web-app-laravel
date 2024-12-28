@@ -1,16 +1,33 @@
 @foreach ($stamps as $stamp)
-    <div class="bg-white rounded-md shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer">
-        <div class="h-[250px] overflow-hidden">
+    <!-- Card individual -->
+    <div class="bg-white border border-[#d1c7bd] rounded-lg overflow-hidden shadow-md hover:shadow-xl transform transition duration-300 hover:scale-105">
+        <!-- Imagen -->
+        <div class="h-64 overflow-hidden">
             <img src="https://media.istockphoto.com/id/1147845636/es/foto/sello-de-franqueo-cancelado-impreso-por-la-mente-india-muestra-cuatro-leones-indios-capital-de.jpg?s=2048x2048&w=is&k=20&c=PUMcjnFj57L47IzAG7ew5ljypuLIWEBAa986V2EzveY=" alt="stamp1" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110" />
-            </div>
-            <div class="p-6 text-center">
-            <h3 class="text-xl font-semibold text-gray-700">{{ $stamp->name }}</h3>
-            <h4 class="text-2xl text-[#3D5300] font-bold mt-2">${{ $stamp->price }}</h4>
         </div>
-        <a href="{{ route('detail', ['id' => $stamp->id]) }}">
-            <button type="button" class="bg-[#3A4750] text-white font-semibold text-sm px-4 py-3 w-full hover:bg-[#D4A373] transition-colors duration-200">
-                Ver detalles
-            </button>
-        </a>
+        <!-- Contenido -->
+        <div class="p-6">
+            <!-- Fecha -->
+            <p class="text-sm font-bold text-[#966343] uppercase mb-2">
+                {{ $stamp->created_at ? $stamp->created_at->format('d M Y') : 'Fecha no disponible' }}
+            </p>
+
+            <!-- Título -->
+            <a href="{{ route('detail', $stamp->id) }}" class="text-xl font-bold text-gray-700 mb-4 hover:text-[#7b4e33]">
+                {{ $stamp->name }}
+            </a>
+            <!-- Descripción -->
+            <p class="text-[#4a4a4a] mb-6">{{ $stamp->description }}</p>
+
+            <!-- Precio -->
+            <p class="text-2xl font-bold text-[#3D5300] mb-4">${{ number_format($stamp->price, 0, ',', '.') }}</p>
+
+            <!-- Botón -->
+            <a href="{{ route('detail', ['id' => $stamp->id]) }}">
+                <button type="button" class="bg-[#3A4750] text-white font-semibold text-sm px-4 py-3 w-full hover:bg-[#D4A373] transition-colors duration-200">
+                    Ver detalles
+                </button>
+            </a>
+        </div>
     </div>
 @endforeach
