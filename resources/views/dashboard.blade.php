@@ -5,9 +5,16 @@
         </h2>
     </x-slot>
 
+
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
     <div class="max-w-lg mx-auto bg-gray-900 border border-gray-700 rounded-lg shadow-md p-6 mt-12 text-gray-200">
         <h2 class="text-2xl font-bold text-white mb-4">Subir Sello</h2>
-        <form action="/upload-stamp" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('stamps.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <!-- Nombre del sello -->
             <div class="mb-4">
