@@ -28,8 +28,6 @@
                     <p class="text-gray-800 text-xl font-semibold">${{ $stamp->price }}</p>
                 </div>
 
-                <p class="mt-2 text-sm text-red-600 font-medium">¡Solo quedan 5 unidades en stock!</p>
-
                 <div class="mt-8">
                     <h3 class="text-xl font-bold text-gray-800">Sobre la colección</h3>
                     <ul class="list-disc space-y-3 pl-4 text-gray-800 text-sm">
