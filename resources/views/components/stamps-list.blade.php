@@ -3,8 +3,10 @@
     <div class="bg-white border border-[#d1c7bd] rounded-lg overflow-hidden shadow-md hover:shadow-xl transform transition duration-300 hover:scale-105">
         <!-- Imagen -->
         <div class="h-64 overflow-hidden">
-            <img src="{{ $stamp->image }}" alt="stamp1" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110" />
+            <img src="{{ asset($stamp->image) }}" alt="{{ $stamp->name }}" alt="stamp1" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110" />
+            <img src="{{ Storage::url($stamp->image) }}" alt="{{ $stamp->name }}" class="w-full h-full object-cover">
         </div>
+
         <!-- Contenido -->
         <div class="p-6">
             <!-- Fecha -->
@@ -30,6 +32,11 @@
             </a>
         </div>
     </div>
+    
+@endforeach
+
+@foreach ($stamps as $stamp)
+    <p>{{ $stamp->image }}</p>
 @endforeach
 
 
