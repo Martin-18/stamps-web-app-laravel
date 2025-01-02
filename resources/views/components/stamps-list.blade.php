@@ -32,11 +32,6 @@
             </a>
         </div>
     </div>
-    
-@endforeach
-
-@foreach ($stamps as $stamp)
-    <p>{{ $stamp->image }}</p>
 @endforeach
 
 

@@ -5,8 +5,7 @@
         </h2>
     </x-slot>
 
-
-    @if (session('success'))
+    @if ($mgs = Session::get('success'))
         <div class="alert alert-success">
             {{ session('success') }}
         </div>
