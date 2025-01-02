@@ -9,11 +9,11 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsStampsController;
 use App\Http\Controllers\StampController;
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/detail/{id}', [DetailController::class, 'show'])->name('detail');
 

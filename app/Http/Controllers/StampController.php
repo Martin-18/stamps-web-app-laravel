@@ -34,22 +34,19 @@ class StampController extends Controller
             'description' => 'required|string',
             'image' => 'required|image|max:2048',
         ]);
-    
-        $stamp = new Stamp();
-        $stamp->name = $request->name;
-        $stamp->price = $request->price;
-        $stamp->description = $request->description;
+        
+        $stamp = Stamp::create($request->all());
     
         if ($request->hasFile('image')) {
-            $name = time() . '.' . $request->file('image')->getClientOriginalExtension();
-            $path = $request->file('image')->storeAs('public/storage', $name);
-            $stamp->image = 'storage/' . $name;
+            $name = $stamp->id . '.' . $request->file('image')->getClientOriginalExtension();
+            $path = $request->file('image')->storeAs('public/img', $name);
+            $stamp->image = 'storage/img/' . $name; 
+            $stamp->save();
         }
-    
-        $stamp->save();
     
         return redirect()->route('home')->with('success', 'El sello ha sido subido correctamente.');
     }
+    
     
     
     /**
