@@ -7,16 +7,19 @@ use App\View\Components\StampsList;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsStampsController;
+use App\Http\Controllers\StampController;
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/detail/{id}', [DetailController::class, 'show'])->name('detail');
 
 Route::get('/news-stamps', [NewsStampsController::class, 'show'])->name('news-stamps');
+
+Route::resource('stamps', StampController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -3,8 +3,9 @@
     <div class="bg-white border border-[#d1c7bd] rounded-lg overflow-hidden shadow-md hover:shadow-xl transform transition duration-300 hover:scale-105">
         <!-- Imagen -->
         <div class="h-64 overflow-hidden">
-            <img src="https://media.istockphoto.com/id/1147845636/es/foto/sello-de-franqueo-cancelado-impreso-por-la-mente-india-muestra-cuatro-leones-indios-capital-de.jpg?s=2048x2048&w=is&k=20&c=PUMcjnFj57L47IzAG7ew5ljypuLIWEBAa986V2EzveY=" alt="stamp1" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110" />
+            <img src="{{ asset('storage/' . $stamp->image) }}" alt="{{ $stamp->name }}" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110" />
         </div>
+
         <!-- Contenido -->
         <div class="p-6">
             <!-- Fecha -->
@@ -31,7 +32,3 @@
         </div>
     </div>
 @endforeach
-
-
-
-
