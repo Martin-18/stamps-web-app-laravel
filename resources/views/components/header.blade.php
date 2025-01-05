@@ -14,7 +14,7 @@
 
         <!-- Buscador visible solo en dispositivos grandes -->
         <div class="hidden md:flex rounded-md border-2 border-[#3A4750] overflow-hidden max-w-lg mx-auto font-[sans-serif]">
-            <input type="email" placeholder="Buscar estampillas..."
+            <input type="email" placeholder="Buscar estampillas..." name="search"
                 class="w-[1600px] outline-none bg-white text-gray-600 text-sm px-4 py-3" />
             <button type='button' class="flex items-center justify-center bg-[#3A4750] px-5">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192.904 192.904" width="16px" class="fill-white">
