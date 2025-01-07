@@ -35,5 +35,7 @@
             <x-stamps-list></x-stamps-list>
         </div>
     </div>
+
+    <x-footer></x-footer>
 </body>
 </html>

@@ -42,16 +42,15 @@
 
     <!-- Mobile Navigation -->
     <nav id="mobile-nav" class="hidden md:hidden bg-gray-100">
-    <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
-        <a href="#" class="text-gray-700 hover:text-green-500">Home</a>
-        <a href="shop.html" class="text-gray-700 hover:text-green-500">Shop</a>
-        <a href="contact.html" class="text-gray-700 hover:text-green-500">Contact</a>
-        <div class="flex flex-col space-y-2">
-        <a href="#" class="text-gray-600 hover:text-green-500"><i class="fas fa-user"></i> Login</a>
-        <a href="#" class="text-gray-600 hover:text-green-500"><i class="fas fa-user-plus"></i> Register</a>
-        <a href="#" class="text-gray-600 hover:text-green-500"><i class="fas fa-shopping-cart"></i> Cart</a>
+        <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+            <a href="#" class="text-gray-700 hover:text-green-500">Home</a>
+            <a href="shop.html" class="text-gray-700 hover:text-green-500">Shop</a>
+            <a href="contact.html" class="text-gray-700 hover:text-green-500">Contact</a>
+            <div class="flex flex-col space-y-2">
+                <a href="#" class="text-gray-600 hover:text-green-500"><i class="fas fa-user"></i> Login</a>
+                <a href="#" class="text-gray-600 hover:text-green-500"><i class="fas fa-user-plus"></i> Register</a>
+            </div>
         </div>
-    </div>
     </nav>
 </header>
 
