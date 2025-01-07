@@ -27,7 +27,9 @@
       <!-- Featured Products -->
       <section class="container mx-auto py-12 px-4">
         <h3 class="text-2xl font-bold text-gray-700 mb-6 text-center">Featured Products</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             <x-stamps-list></x-stamps-list>
+        </div>
       </section>
 
       <!-- Categories Highlights -->
