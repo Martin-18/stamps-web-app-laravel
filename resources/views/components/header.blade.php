@@ -5,9 +5,9 @@
 
         <!-- Desktop Navigation -->
         <nav class="hidden md:flex items-center space-x-6">
-            <a href="#" class="text-gray-700 hover:text-green-500">Home</a>
-            <a href="shop.html" class="text-gray-700 hover:text-green-500">Shop</a>
-            <a href="contact.html" class="text-gray-700 hover:text-green-500">Contact</a>
+            <a href="{{ route('home') }}" class="text-gray-700 hover:text-green-500">Home</a>
+            <a href="{{ route('shop') }}" class="text-gray-700 hover:text-green-500">Shop</a>
+            <a href="{{ route('contact') }}" class="text-gray-700 hover:text-green-500">Contact</a>
         </nav>
 
         <!-- Desktop Icons -->
@@ -32,7 +32,7 @@
                     @endif
                 @endauth
             </div>
-            @endif
+        @endif
 
         <!-- Mobile Menu Button -->
         <button class="md:hidden text-gray-600 hover:text-green-500" onclick="toggleMenu()">
