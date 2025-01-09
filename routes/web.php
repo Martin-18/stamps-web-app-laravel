@@ -19,6 +19,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/detail/{id}', [DetailController::class, 'show'])->name('detail');
 
 Route::get('/shop', [ShopController::class, 'index'])->name('shop');
+
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
 Route::resource('stamps', StampController::class);

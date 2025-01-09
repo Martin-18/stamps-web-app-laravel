@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-200 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('Panel de control') }}
         </h2>
     </x-slot>
 
@@ -11,38 +11,92 @@
         </div>
     @endif
 
-    <div class="max-w-lg mx-auto bg-gray-900 border border-gray-700 rounded-lg shadow-md p-6 mt-12 text-gray-200">
-        <h2 class="text-2xl font-bold text-white mb-4">Subir Sello</h2>
-        <form action="{{ route('stamps.store') }}" method="POST" enctype="multipart/form-data">
+    <main class="container mx-auto mt-8 px-4 flex flex-col lg:flex-row gap-8">
+        <!-- Formulario -->
+        <section class="bg-white shadow-md rounded-lg p-6 w-full lg:w-1/2">
+            <h2 class="text-2xl font-bold text-gray-700 mb-4">Agregar Sello</h2>
+            <form action="{{ route('stamps.store') }}" method="POST" enctype="multipart/form-data" class="space-y-4">
             @csrf
-            <!-- Nombre del sello -->
-            <div class="mb-4">
-                <label for="name" class="block text-white font-bold mb-2">Nombre del sello:</label>
-                <input type="text" id="name" name="name" class="w-full border border-gray-700 rounded-md px-4 py-2 bg-[#3A4750] text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#D4A373]" placeholder="Escribe el nombre del sello" required />
+            <!-- Nombre -->
+            <div>
+                <label for="name" class="block text-gray-600 font-medium mb-1">Nombre del Sello</label>
+                <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                required 
+                placeholder="Ej: Sello Histórico" 
+                class="w-full border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-green-500">
             </div>
-
             <!-- Precio -->
-            <div class="mb-4">
-                <label for="price" class="block text-white font-bold mb-2">Precio:</label>
-                <input type="number" id="price" name="price" class="w-full border border-gray-700 rounded-md px-4 py-2 bg-[#3A4750] text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#D4A373]" placeholder="Escribe el precio del sello" required />
+            <div>
+                <label for="price" class="block text-gray-600 font-medium mb-1">Precio</label>
+                <input 
+                type="number" 
+                id="price" 
+                name="price" 
+                required 
+                placeholder="Ej: 10.00" 
+                class="w-full border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-green-500">
             </div>
-
             <!-- Descripción -->
-            <div class="mb-4">
-                <label for="description" class="block text-white font-bold mb-2">Descripción:</label>
-                <textarea id="description" name="description" class="w-full border border-gray-700 rounded-md px-4 py-2 bg-[#3A4750] text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#D4A373]" rows="4" placeholder="Escribe una breve descripción del sello" required></textarea>
+            <div>
+                <label for="description" class="block text-gray-600 font-medium mb-1">Descripción</label>
+                <textarea 
+                id="description" 
+                name="description" 
+                required 
+                placeholder="Escribe una breve descripción del sello" 
+                class="w-full border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
             </div>
-
             <!-- Imagen -->
-            <div class="mb-4">
-                <label for="image" class="block text-white font-bold mb-2">Imagen:</label>
-                <input type="file" id="image" name="image" class="w-full border border-gray-700 rounded-md px-4 py-2 bg-[#3A4750] text-gray-200 focus:outline-none focus:ring-2 focus:ring-[#D4A373]" accept="image/*" required />
+            <div>
+                <label for="image" class="block text-gray-600 font-medium mb-1">Imagen del Sello</label>
+                <input 
+                type="file" 
+                id="image" 
+                name="image" 
+                required 
+                class="w-full border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-green-500">
             </div>
-
             <!-- Botón -->
-            <button type="submit" class="bg-[#D4A373] text-gray-900 font-semibold text-sm px-4 py-3 w-full rounded-md hover:bg-[#B68E6D] transition-colors duration-200">
-                Subir Sello
-            </button>
-        </form>
-    </div>
+            <div>
+                <button 
+                type="submit" 
+                class="w-full bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600">
+                Guardar Sello
+                </button>
+            </div>
+            </form>
+        </section>
+
+        <!-- Tabla de Sellos -->
+        <section class="bg-white shadow-md rounded-lg p-6 w-full lg:w-1/2 overflow-x-auto">
+            <h2 class="text-2xl font-bold text-gray-700 mb-4">Lista de Sellos</h2>
+            <table class="min-w-full bg-white border border-gray-200 text-left text-sm text-gray-600">
+            <thead>
+                <tr class="bg-gray-100 border-b border-gray-300">
+                <th class="py-2 px-4">#</th>
+                <th class="py-2 px-4">Nombre</th>
+                <th class="py-2 px-4">Precio</th>
+                <th class="py-2 px-4">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Ejemplo de Fila -->
+                <tr class="border-b border-gray-200">
+                <td class="py-2 px-4">1</td>
+                <td class="py-2 px-4">Sello Histórico</td>
+                <td class="py-2 px-4">$10.00</td>
+                <td class="py-2 px-4">
+                    <button class="text-blue-500 hover:underline">Editar</button> | 
+                    <button class="text-red-500 hover:underline">Eliminar</button>
+                </td>
+                </tr>
+                <!-- Más filas dinámicas -->
+            </tbody>
+            </table>
+        </section>
+    </main>
+
 </x-app-layout>

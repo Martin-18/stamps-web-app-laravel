@@ -5,7 +5,7 @@
         <div class="flex justify-between h-16">
 
             <a href="{{ route('home') }}" class="max-sm:w-full shrink-0">
-                <img src="{{ asset('images/logo.png') }}" alt="Logo de la tienda" class="w-[75px] h-[65px] mr-2">
+                <img src="{{ asset('images/logo.png') }}" alt="Logo de la tienda" class="w-[140] h-[45px] mt-3">
             </a>
 
             <div class="flex">               
