@@ -10,7 +10,7 @@
 </head>
 
 <body class="bg-gray-50 text-gray-800">
-  
+
   <x-header></x-header>
 
   <!-- Stamp Details Section -->
@@ -25,25 +25,22 @@
       <div>
         <h2 class="text-3xl font-bold text-gray-700 mb-4">{{ $stamp->name }}</h2>
         <p class="text-gray-500 mb-6">
-            {{  $stamp->description }}
+          {{ $stamp->description }}
         </p>
 
         <p class="text-2xl font-semibold text-green-600 mb-4">$15.00</p>
 
         <div class="flex items-center space-x-4 mb-6">
-          <button class="bg-green-500 text-white py-2 px-6 rounded hover:bg-green-600">
-            Add to Cart
-          </button>       
           <a href="{{ route('shop') }}">
             <button class="bg-red-500 text-white py-2 px-6 rounded hover:bg-red-600">
-                Volver a la tienda
+              Volver a la tienda
             </button>
           </a>
         </div>
 
         <!-- Reviews -->
         <div>
-          <h3 class="text-lg font-semibold text-gray-700 mb-4">Reviews</h3>
+          <h3 class="text-lg font-semibold text-gray-700 mb-4">Reseñas</h3>
           <ul class="space-y-4">
             <li class="bg-gray-100 p-4 rounded">
               <p class="text-gray-600">“Absolutely stunning stamp! The quality exceeded my expectations.”</p>
@@ -59,7 +56,7 @@
     </div>
   </main>
 
-    <x-footer></x-footer>
+  <x-footer></x-footer>
 </body>
 
 </html>

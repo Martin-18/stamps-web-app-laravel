@@ -9,9 +9,9 @@
 
         <!-- Desktop Navigation -->
         <nav class="hidden md:flex items-center space-x-6">
-            <a href="{{ route('home') }}" class="text-gray-700 hover:text-green-500">Home</a>
-            <a href="{{ route('shop') }}" class="text-gray-700 hover:text-green-500">Shop</a>
-            <a href="{{ route('contact') }}" class="text-gray-700 hover:text-green-500">Contact</a>
+            <a href="{{ route('home') }}" class="text-gray-700 hover:text-green-500">Inicio</a>
+            <a href="{{ route('shop') }}" class="text-gray-700 hover:text-green-500">Tienda</a>
+            <a href="{{ route('contact') }}" class="text-gray-700 hover:text-green-500">Contacto</a>
         </nav>
 
         <!-- Desktop Icons -->
@@ -25,12 +25,12 @@
             </a>
             @else
             <a href="{{ route('login') }}" class="text-gray-600 hover:text-green-500">
-                <i class="fas fa-user"></i> Login
+                <i class="fas fa-user"></i> Iniciar Sesión
             </a>
 
             @if (Route::has('register'))
             <a href="{{ route('register') }}" class="text-gray-600 hover:text-green-500">
-                <i class="fas fa-user-plus"></i> Register
+                <i class="fas fa-user-plus"></i> Registrarse
             </a>
             @endif
             @endauth
@@ -46,9 +46,9 @@
     <!-- Mobile Navigation -->
     <nav id="mobile-nav" class="hidden md:hidden bg-gray-100">
         <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
-            <a href="{{ route('home') }}" class="text-gray-700 hover:text-green-500">Home</a>
-            <a href="{{ route('shop') }}" class="text-gray-700 hover:text-green-500">Shop</a>
-            <a href="{{ route('contact') }}" class="text-gray-700 hover:text-green-500">Contact</a>
+            <a href="{{ route('home') }}" class="text-gray-700 hover:text-green-500">Inicio</a>
+            <a href="{{ route('shop') }}" class="text-gray-700 hover:text-green-500">Tienda</a>
+            <a href="{{ route('contact') }}" class="text-gray-700 hover:text-green-500">Contacto</a>
 
             @if (Route::has('login'))
             <div class="flex flex-col space-y-2">
@@ -60,12 +60,12 @@
                 </a>
                 @else
                 <a href="{{ route('login') }}" class="text-gray-600 hover:text-green-500">
-                    <i class="fas fa-user"></i> Login
+                    <i class="fas fa-user"></i> Iniciar Sesión
                 </a>
 
                 @if (Route::has('register'))
                 <a href="{{ route('register') }}" class="text-gray-600 hover:text-green-500">
-                    <i class="fas fa-user-plus"></i> Register
+                    <i class="fas fa-user-plus"></i> Registrarse
                 </a>
                 @endif
                 @endauth
