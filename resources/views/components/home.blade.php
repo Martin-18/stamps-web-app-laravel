@@ -19,11 +19,11 @@
       <section class="bg-gradient-to-r from-green-400 via-green-500 to-green-600 text-white py-16 text-center">
         <h2 class="text-4xl font-bold mb-4">Discover Unique Stamps</h2>
         <p class="text-lg mb-6">Explore our collection of rare and vintage stamps from around the world.</p>
-        <a href="shop.html" class="bg-white text-green-600 font-semibold py-3 px-6 rounded hover:bg-gray-200">
+        <a href="{{ route('shop') }}" class="bg-white text-green-600 font-semibold py-3 px-6 rounded hover:bg-gray-200">
           Shop Now
         </a>
       </section>
-
+      
       <!-- Featured Products -->
       <section class="container mx-auto py-12 px-4">
         <h3 class="text-2xl font-bold text-gray-700 mb-6 text-center">Featured Products</h3>
