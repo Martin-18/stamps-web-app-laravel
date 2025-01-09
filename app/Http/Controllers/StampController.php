@@ -12,15 +12,8 @@ class StampController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        $stamps = Stamp::all();
+        return view('dashboard', ['stamps' => $stamps]);
     }
 
     /**
@@ -43,39 +36,53 @@ class StampController extends Controller
             $stamp->image = 'storage/img/' . $name; 
             $stamp->save();
         }
-    
-        return redirect()->route('home')->with('success', 'El sello ha sido subido correctamente.');
-    }
-    
-    /**
-     * Display the specified resource.
-     */
-    public function show(rc $rc)
-    {
-        //
+
+        $color = "blue";
+        return redirect()->route('stamps.index')->with(['success' => 'El sello ha sido subido correctamente.','color' => $color]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(rc $rc)
+    public function edit(Stamp $stamp)
     {
-        //
+        return view('dashboard.edit', compact('stamp'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, rc $rc)
+    public function update(Request $request, Stamp $stamp)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'price' => 'required|numeric',
+            'description' => 'required|string',
+            'image' => 'nullable|image|max:2048',
+        ]);
+
+        $stamp->update($request->except('image'));
+
+        if ($request->hasFile('image')) {
+            $name = $stamp->id . '.' . $request->file('image')->getClientOriginalExtension();
+            $path = $request->file('image')->storeAs('public/img', $name);
+            $stamp->image = 'storage/img/' . $name;
+            $stamp->save();
+        }
+
+        $color = "green";
+        //return redirect()->route('stamps.index')->with('success', 'El sello ha sido actualizado correctamente.', $color);
+        return redirect()->route('stamps.index')->with(['success' => 'El sello ha sido actualizado correctamente.','color' => $color]);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(rc $rc)
+    public function destroy(Stamp $stamp)
     {
-        //
+        $stamp->delete();
+        $color = "red";
+        //return redirect()->route('stamps.index')->with('success', 'El sello ha sido eliminado correctamente.', $color);
+        return redirect()->route('stamps.index')->with(['success' => 'El sello ha sido eliminado correctamente.','color' => $color]);
     }
 }

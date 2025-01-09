@@ -28,7 +28,7 @@
           {{ $stamp->description }}
         </p>
 
-        <p class="text-2xl font-semibold text-green-600 mb-4">$15.00</p>
+        <p class="text-2xl font-semibold text-green-600 mb-4">{{ $stamp->price }}</p>
 
         <div class="flex items-center space-x-4 mb-6">
           <a href="{{ route('shop') }}">
