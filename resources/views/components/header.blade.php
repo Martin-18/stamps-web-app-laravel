@@ -4,7 +4,7 @@
         <a href="{{ route('home') }}">
             <img src="{{ asset('images/logo.png') }}"
                 alt="Logo de la compañía"
-                class="w-[200px] h-[65px] mr-2">
+                class="w-[140px] h-[45px] mr-2">
         </a>
 
         <!-- Desktop Navigation -->
