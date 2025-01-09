@@ -47,8 +47,6 @@ class StampController extends Controller
         return redirect()->route('home')->with('success', 'El sello ha sido subido correctamente.');
     }
     
-    
-    
     /**
      * Display the specified resource.
      */

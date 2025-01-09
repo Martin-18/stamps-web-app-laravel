@@ -3,7 +3,6 @@
 namespace App\View\Components;
 
 use Closure;
-use App\Models\Stamp;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
@@ -11,9 +10,14 @@ class StampsList extends Component
 {
     public $stamps;
 
-    public function __construct()
+    /**
+     * Create a new component instance.
+     *
+     * @param  array|null  $stamps
+     */
+    public function __construct($stamps = [])
     {
-        $this->stamps = Stamp::all();
+        $this->stamps = $stamps;
     }
 
     /**
