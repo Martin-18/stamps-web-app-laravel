@@ -18,22 +18,38 @@
   <main class="container mx-auto mt-8 px-4 flex-grow">
     <!-- Filters -->
     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 space-y-4 sm:space-y-0">
-      <h2 class="text-2xl font-bold text-gray-700 text-center sm:text-left">Shop Stamps</h2>
-      <div class="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
-        <input type="text" placeholder="Search..." class="border border-gray-300 rounded-lg py-2 px-4 w-full sm:w-64 focus:outline-none focus:ring-2 focus:ring-green-500">
-        <select class="border border-gray-300 rounded-lg py-2 px-4 w-full sm:w-auto focus:outline-none focus:ring-2 focus:ring-green-500">
-          <option value="">Sort By</option>
-          <option value="price-low">Price: Low to High</option>
-          <option value="price-high">Price: High to Low</option>
-          <option value="newest">Newest</option>
-        </select>
-      </div>
+        <h2 class="text-2xl font-bold text-gray-700 text-center sm:text-left">Shop Stamps</h2>
+        <form method="GET" action="{{ route('shop') }}" class="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
+            <!-- Campo de búsqueda -->
+            <input 
+                type="text" 
+                name="search" 
+                value="{{ request('search') }}" 
+                placeholder="Search..." 
+                class="border border-gray-300 rounded-lg py-2 px-4 w-full sm:w-64 focus:outline-none focus:ring-2 focus:ring-green-500">
+
+            <!-- Campo de orden -->
+            <select 
+                name="sort" 
+                class="border border-gray-300 rounded-lg py-2 px-4 w-full sm:w-auto focus:outline-none focus:ring-2 focus:ring-green-500">
+                <option value="">Sort By</option>
+                <option value="all" {{ request('sort') == 'all' ? 'selected' : '' }}>Todos</option>
+                <option value="price-low" {{ request('sort') == 'price-low' ? 'selected' : '' }}>Price: Low to High</option>
+                <option value="price-high" {{ request('sort') == 'price-high' ? 'selected' : '' }}>Price: High to Low</option>
+                <option value="newest" {{ request('sort') == 'newest' ? 'selected' : '' }}>Newest</option>
+            </select>
+
+            <!-- Botón de envío -->
+            <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-lg">
+                Filter
+            </button>
+        </form>
     </div>
 
     <!-- Product Grid -->
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
       <!-- Product Card -->
-      <x-stamps-list></x-stamps-list>
+      <x-stamps-list :stamps="$stamps"></x-stamps-list>
     </div>
   </main>
 
