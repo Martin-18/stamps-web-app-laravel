@@ -19,7 +19,7 @@ class StampController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    /*public function store(Request $request)
     {
         $request->validate([
             'name' => 'required|string|max:255',
@@ -39,6 +39,39 @@ class StampController extends Controller
 
         $color = "blue";
         return redirect()->route('stamps.index')->with(['success' => 'El sello ha sido subido correctamente.','color' => $color]);
+    }*/
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'price' => 'required|numeric',
+            'description' => 'required|string',
+            'image' => 'required|image|max:2048',
+        ]);
+
+        $stamp = Stamp::create($request->all());
+                
+        $stamp->save();
+                 
+        $storagePath = storage_path('app/public/images/posts/' . $post->id);
+
+        if (!file_exists($storagePath)) {
+            mkdir($storagePath, 0755, true);
+        }
+
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $index => $image) {
+                $img->save($storagePath . '/' . $filename);
+                $imagePath = 'images/posts/' . $post->slug . '/' . $filename;
+                $post->images()->create([
+                    'url' => $imagePath,
+                ]);
+            }
+        }
+    
+        //return redirect()->route('activar');
+        return redirect()->route('/');
     }
 
     /**
