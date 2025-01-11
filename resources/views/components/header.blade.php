@@ -9,13 +9,13 @@
 
         <!-- Desktop Navigation -->
         <nav class="hidden md:flex items-center space-x-6">
-            <a href="{{ route('home') }}" class="text-gray-700 hover:text-green-500">Inicio</a>
-            <a href="{{ route('shop') }}" class="text-gray-700 hover:text-green-500">Tienda</a>
-            <a href="{{ route('contact') }}" class="text-gray-700 hover:text-green-500">Contacto</a>
+            <a href="{{ route('home') }}" class="text-gray-700 hover:text-green-500">Inicio <i class="fa-solid fa-house ml-2"></i></a>
+            <a href="{{ route('shop') }}" class="text-gray-700 hover:text-green-500">Tienda <i class="fa-solid fa-shop ml-2"></i></a>
+            <a href="{{ route('contact') }}" class="text-gray-700 hover:text-green-500">Contacto <i class="fa-solid fa-envelope ml-2"></i></a>
         </nav>
 
         <!-- Desktop Icons -->
-        @if (Route::has('login'))
+        <!-- @if (Route::has('login'))
             <div class="hidden md:flex items-center space-x-4">
                 @auth
                     <a href="{{ url('/dashboard') }}" class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition focus:outline-none focus-visible:ring-[#FF2D20] dark:text-gray-700  dark:focus-visible:ring-white">
@@ -33,7 +33,7 @@
                     @endif
                 @endauth
             </div>
-        @endif
+        @endif -->
 
         <!-- Mobile Menu Button -->
         <button class="md:hidden text-gray-600 hover:text-green-500" onclick="toggleMenu()">
