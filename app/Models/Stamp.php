@@ -15,4 +15,5 @@ class Stamp extends Model
         'description',
         'image',
     ];
+
 }

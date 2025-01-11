@@ -6,11 +6,11 @@
     </x-slot>
 
     @if (session('success'))
-        <div class="bg-{{ session('color') }}-200 border-{{ session('color') }}-600 text-{{ session('color') }}-600 border-l-4 p-4" role="alert">
+        <!-- <div class="bg-{{ session('color') }}-200 border-{{ session('color') }}-600 text-{{ session('color') }}-600 border-l-4 p-4" role="alert">
             <p class="font-bold">
                 {{ session('success') }}
             </p>
-        </div>
+        </div> -->
 
         <div class="bg-{{ session('color') }}-500 py-2 px-4 rounded-md text-white text-center fixed bottom-4 right-4 flex gap-4">
             <p class="font-bold">
@@ -19,14 +19,14 @@
             <span class="cursor-pointer font-bold" onclick="return this.parentNode.remove()"><sup>X</sup></span>
         </div>
 
-        <div class="w-full md:w-1/3 mx-auto p-14">
+        <!-- <div class="w-full md:w-1/3 mx-auto p-14">
             <div class="flex items-center justify-between p-5 leading-normal text-{{ session('color') }}-600 bg-blue-100 rounded-lg" role="alert">
                 <p>{{ session('success') }}</p>
                 <svg onclick="return this.parentNode.remove();" class="inline w-4 h-4 fill-current ml-2 hover:opacity-80 cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                 <path d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 464c-114.7 0-208-93.31-208-208S141.3 48 256 48s208 93.31 208 208S370.7 464 256 464zM359.5 133.7c-10.11-8.578-25.28-7.297-33.83 2.828L256 218.8L186.3 136.5C177.8 126.4 162.6 125.1 152.5 133.7C142.4 142.2 141.1 157.4 149.7 167.5L224.6 256l-74.88 88.5c-8.562 10.11-7.297 25.27 2.828 33.83C157 382.1 162.5 384 167.1 384c6.812 0 13.59-2.891 18.34-8.5L256 293.2l69.67 82.34C330.4 381.1 337.2 384 344 384c5.469 0 10.98-1.859 15.48-5.672c10.12-8.562 11.39-23.72 2.828-33.83L287.4 256l74.88-88.5C370.9 157.4 369.6 142.2 359.5 133.7z"/>
                 </svg>
             </div>
-        </div>
+        </div> -->
     @endif
 
     <main class="container mx-auto mt-8 px-4 flex flex-col lg:flex-row gap-8">

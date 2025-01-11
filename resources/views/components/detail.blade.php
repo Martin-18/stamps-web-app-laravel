@@ -18,7 +18,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       <!-- Stamp Image -->
       <div>
-        <img src="https://via.placeholder.com/500" alt="Stamp" class="w-full rounded shadow-lg">
+        <img src="{{ $stamp->image ? asset($stamp->image) : asset('images/default.jpg') }}" alt="Stamp" class="w-full rounded shadow-lg">
       </div>
 
       <!-- Stamp Info -->
@@ -28,7 +28,7 @@
           {{ $stamp->description }}
         </p>
 
-        <p class="text-2xl font-semibold text-green-600 mb-4">{{ $stamp->price }}</p>
+        <p class="text-2xl font-semibold text-green-600 mb-4">${{ number_format($stamp->price, 2, '.', ',') }}</p>
 
         <div class="flex items-center space-x-4 mb-6">
           <a href="{{ route('shop') }}">
