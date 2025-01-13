@@ -36,7 +36,7 @@
           <option value="all" {{ request('sort') == 'all' ? 'selected' : '' }}>Todos</option>
           <option value="price-low" {{ request('sort') == 'price-low' ? 'selected' : '' }}>Precio: Barato a Caro</option>
           <option value="price-high" {{ request('sort') == 'price-high' ? 'selected' : '' }}>Precio: Caro a Barato</option>
-          <option value="newest" {{ request('sort') == 'newest' ? 'selected' : '' }}>Mas nuevas</option>
+          <option value="newest" {{ request('sort') == 'newest' ? 'selected' : '' }}>Más nuevas</option>
         </select>
 
         <!-- Botón de envío -->
@@ -48,9 +48,11 @@
 
     <!-- Product Grid -->
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-      <!-- Product Card -->
       <x-stamps-list :stamps="$stamps"></x-stamps-list>
     </div>
+    <!-- Paginación -->
+    <x-pagination :stamps="$stamps" />
+    
   </main>
 
   <!-- Footer -->

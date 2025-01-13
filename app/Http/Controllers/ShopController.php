@@ -33,7 +33,7 @@ class ShopController extends Controller
         }
     
         // Obtener los resultados
-        $stamps = $query->get();
+        $stamps = $query->paginate(12);
     
         return view('components.shop', ['stamps' => $stamps]);
 

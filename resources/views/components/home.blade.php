@@ -51,7 +51,8 @@
           <img src="https://via.placeholder.com/200" alt="Sello 2" class="w-full rounded mb-4">
           <h3 class="text-lg font-bold text-gray-700">Sello Moderno</h3>
           <p class="text-gray-600">Un sello conmemorativo especial.</p>
-        </div>        <div class="bg-white p-4 rounded shadow">
+        </div>
+        <div class="bg-white p-4 rounded shadow">
           <img src="https://via.placeholder.com/200" alt="Sello 1" class="w-full rounded mb-4">
           <h3 class="text-lg font-bold text-gray-700">Sello Antiguo</h3>
           <p class="text-gray-600">Un hermoso sello del siglo XX.</p>

@@ -30,8 +30,10 @@ Route::resource('stamps', StampController::class);
 Route::patch('/stamps/{stamp}', [StampController::class, 'update'])->name('stamps.update');
 
 Route::get('/dashboard', function () {
-    $stamps = Stamp::all();
+    $stamps = Stamp::paginate(15); // Devuelve un paginador con 15 sellos por página
+    
     return view('dashboard', compact('stamps'));
+
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
@@ -41,4 +43,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
