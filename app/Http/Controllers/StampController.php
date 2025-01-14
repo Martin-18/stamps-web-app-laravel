@@ -26,22 +26,35 @@ class StampController extends Controller
             'name' => 'required|string|max:255',
             'price' => 'required|numeric',
             'description' => 'required|string',
-            'image' => 'required|image|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-        
-        $stamp = Stamp::create($request->all());
-    
+
+        // Crear el modelo y asignar un valor temporal al campo 'image'
+        $stamp = new Stamp($request->only(['name', 'price', 'description']));
+        $stamp->image = 'placeholder.png'; // Valor temporal
+        $stamp->save();
+
         if ($request->hasFile('image')) {
-            $name = $stamp->id . '.' . $request->file('image')->getClientOriginalExtension();
-            //$path = $request->file('image')->storeAs('public/img', $name);
-            $request->file('image')->storeAs('public/img', $name);
-            $stamp->image = 'storage/img/' . $name; 
+            $image = $request->file('image');
+            $storagePath = storage_path('app/public/images/stamps/' . $stamp->id);
+
+            //Codigo para crear el directorio si no existe
+            /*if (!file_exists($storagePath)) {
+                mkdir($storagePath, 0755, true);
+            }*/
+
+            $filename = $stamp->id . '.' . $image->getClientOriginalExtension();
+            $image->move($storagePath, $filename);
+
+            $imagePath = 'storage/images/stamps/' . $stamp->id . '/' . $filename;
+            $stamp->image = $imagePath;
             $stamp->save();
         }
 
         $color = "blue";
-        return redirect()->route('stamps.index')->with(['success' => 'El sello ha sido subido correctamente.','color' => $color]);
+        return redirect()->route('stamps.index')->with(['success' => 'El sello ha sido subido correctamente.', 'color' => $color]);
     }
+
 
     /**
      * Show the form for editing the specified resource.

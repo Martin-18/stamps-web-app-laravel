@@ -73,7 +73,7 @@
                 <input 
                     type="file" 
                     id="image" 
-                    name="image" 
+                    name="image"
                     required 
                     class="w-full border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-green-500">
             </div>
@@ -120,6 +120,5 @@
         </table>
     </section>
 </main>
-
 
 </x-app-layout>
