@@ -38,9 +38,10 @@ class StampController extends Controller
             $image = $request->file('image');
             $storagePath = storage_path('app/public/images/stamps/' . $stamp->id);
 
-            if (!file_exists($storagePath)) {
+            //Codigo para crear el directorio si no existe
+            /*if (!file_exists($storagePath)) {
                 mkdir($storagePath, 0755, true);
-            }
+            }*/
 
             $filename = $stamp->id . '.' . $image->getClientOriginalExtension();
             $image->move($storagePath, $filename);
